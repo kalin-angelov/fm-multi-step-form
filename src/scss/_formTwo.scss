@@ -1,0 +1,82 @@
+.form-two-main-container {
+    @include formsStyles ();
+    height: 500px;
+
+    .plans {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 12px;
+
+        padding: 0 14px;
+        margin: 12px 0;
+        width: 295px;
+        height: 80px;
+        border: 1px solid $cool-gray;
+        border-radius: 10px;
+        
+        .header {
+            font-weight: 800;
+            padding-bottom: 3px;
+        }
+
+        .price {
+            color: $cool-gray;
+        }
+    }
+
+    .form-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+
+        width: 295px;
+        height: 50px;
+        border-radius: 10px;
+        background-color: #f8f9fe;
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+    
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: $marine-blue;
+                -webkit-transition: .4s;
+                transition: .4s;
+                border-radius: 34px;
+            }
+    
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 14px;
+                width: 14px;
+                left: 4px;
+                bottom: 3.5px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+                border-radius: 50%;
+            }
+    
+            input:checked + .slider:before {
+                -webkit-transform: translateX(16px);
+                -ms-transform: translateX(16px);
+                transform: translateX(16px);
+            }
+        }
+    }
+}

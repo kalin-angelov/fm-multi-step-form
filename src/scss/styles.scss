@@ -1,0 +1,42 @@
+/* Primary Colors */
+
+$marine-blue: hsl(213, 96%, 18%);
+$pastel-blue: hsl(228, 100%, 84%);
+$light-blue: hsl(206, 94%, 87%);
+$strawberry-red: hsl(354, 84%, 57%);
+$purple: #4639ff;
+
+/* Natural Colors */
+
+$cool-gray: hsl(231, 11%, 63%);
+$light-gray: hsl(229, 24%, 87%);
+$magnolia: hsl(217, 100%, 97%);
+$alabaster: hsl(231, 100%, 99%);
+$white: hsl(0, 0%, 100%);
+
+@mixin formsStyles {
+    position: absolute;
+    top: 95px;
+    margin: 0 calc((100vw - 345px) / 2);
+
+    width: 345px;
+    background-color: $white;
+    border-radius: 10px;
+    padding: 35px 22px;
+
+    .form-header {
+        margin-bottom: 10px;
+    }
+
+    .form-description {
+        color: $cool-gray;
+        line-height: 1.5;
+        margin-bottom: 24px;
+        padding-right: 25px;
+    } 
+}
+
+@import "./main";
+@import "./formOne";
+@import "./formTwo";
+@import "./formThree";
