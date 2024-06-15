@@ -1,17 +1,30 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
+import { useEffect, useState } from "react";
 
 const FormOne = () => {
   const navigate = useNavigate();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [error, setError] = useState("");
+  const { register, handleSubmit, formState: { errors }} = useForm({
+    criteriaMode: "all"
+  });
+  const [userInfo, setUserInfo] = useState();
 
-  const nextStep = () => {
-    navigate("/two")
+  useEffect(() => {
+    const user = sessionStorage.getItem("user");
+    if (user) {
+      setUserInfo(JSON.parse(user));
+    };
+    console.log(userInfo);
+  },[]);
+
+  const nextStep = (data) => {
+    sessionStorage.setItem("user", JSON.stringify({name:data.name, email: data.email, phone: data.phone}));
+    navigate("/two");
   };
 
+
+  
   return (
     <div className="form-one-main-container">
 
@@ -22,43 +35,83 @@ const FormOne = () => {
 
           <div className="form-field">
             <label htmlFor="name">Name</label>
-            <p className="error-message">This field is required</p>
+            <ErrorMessage 
+              errors={errors}
+              name="name"
+              render={({ messages }) => 
+                messages && Object.entries(messages).map(([type, message]) => (
+                  <p className="error-message" key={type}>{message}</p>
+                ))
+              }
+            />
             <input
-              className="input" 
+              className={"input"} 
               type="text" 
               id="name" 
-              name="name" 
+              name="name"
               placeholder="e.g.Stephen King"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              
+              {...register("name", {
+                required: "This field is required",
+                pattern: {
+                  value: /^[a-zA-Z]+$/gm,
+                  message: "Invalid name"
+                }
+              })}
             />
           </div>
           
           <div className="form-field">
             <label htmlFor="email">Email Address</label>
-            <p className="error-message">This field is required</p>
+            <ErrorMessage 
+              errors={errors}
+              name="email"
+              render={({ messages }) => 
+                messages && Object.entries(messages).map(([type, message]) => (
+                  <p className="error-message" key={type}>{message}</p>
+                ))
+              }
+            />
             <input
               className="input"
               type="email" 
               id="email" 
               name="email" 
               placeholder="e.g.stephenking@lore.com" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              {...register("email", {
+                required: "This field is required",
+                pattern: {
+                  value: /^[a-zA-Z0-9]+@[a-z]+.[a-z]{2,3}$/gm,                                                
+                  message: "Invalid email"
+                }
+              })}
             />
           </div>
           
           <div className="form-field">
             <label htmlFor="phone">Phone Number</label>
-            <p className="error-message">This field is required</p>
+            <ErrorMessage 
+              errors={errors}
+              name="phone"
+              render={({ messages }) => 
+                messages && Object.entries(messages).map(([type, message]) => (
+                  <p className="error-message" key={type}>{message}</p>
+                ))
+              }
+            />
             <input
               className="input" 
               type="number" 
               id="phone" 
               name="phone" 
               placeholder="e.g.+1 234 567 890" 
-              value={phone}
-              onChange={(e) => setPhone(e.target.phone)}
+              {...register("phone", {
+                required: "This field is required",
+                minLength: {
+                  value: 5,
+                  message: "Invalid phone number"
+                }
+              })}
             />
           </div>
           
@@ -66,7 +119,7 @@ const FormOne = () => {
       </article>
 
       <div className="bottom-navigation-btn-container">
-        <button className="next-btn" onClick={nextStep}>Next Step</button>
+        <button className="next-btn" onClick={handleSubmit(nextStep)}>Next Step</button>
       </div>
       
     </div>
