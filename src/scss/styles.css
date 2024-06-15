@@ -1,26 +1,26 @@
 /* Primary Colors */
 /* Natural Colors */
-/* Main Page */
 main {
-  display: flex;
-  flex-direction: column;
+  background-color: hsl(217, 100%, 97%);
   min-height: 100dvh;
 }
-main .top-navigation-container {
+
+/* Main Page */
+aside {
   background-image: url("/public/images/bg-sidebar-mobile.svg");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
   height: 170px;
 }
-main .top-navigation-container .top-navigation {
+aside .navigation {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 28px;
+  gap: 15px;
   padding-top: 30px;
 }
-main .top-navigation-container .top-navigation li {
+aside .navigation .steps {
   color: hsl(0, 0%, 100%);
   border: 1.5px solid hsl(0, 0%, 100%);
   border-radius: 50%;
@@ -30,11 +30,41 @@ main .top-navigation-container .top-navigation li {
   text-align: center;
   cursor: pointer;
 }
-main .center-area {
-  flex-grow: 1;
-  background-color: hsl(217, 100%, 97%);
+aside .navigation .on {
+  background-color: hsl(206, 94%, 87%);
+  border-color: hsl(206, 94%, 87%);
+  color: black;
 }
-main .bottom-navigation-btn-container {
+
+@media screen and (min-width: 1440px) {
+  aside .top-navigation-container {
+    grid-area: aside;
+    background-image: url("/public/images/bg-sidebar-desktop.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+  }
+  aside .top-navigation-container .top-navigation {
+    flex-direction: column;
+    gap: 28px;
+    padding-top: 30px;
+  }
+  aside .top-navigation-container .top-navigation li {
+    color: hsl(0, 0%, 100%);
+    border: 1.5px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    padding: 7px 10px 0 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+/* From One */
+.form-one-main-container .bottom-navigation-btn-container {
+  position: absolute;
+  bottom: 0;
+  background-color: hsl(0, 0%, 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,13 +72,13 @@ main .bottom-navigation-btn-container {
   width: 100%;
   height: 70px;
 }
-main .bottom-navigation-btn-container .back-btn {
-  background-color: transparent;
+.form-one-main-container .bottom-navigation-btn-container .back-btn {
+  background-color: white;
   border: unset;
   font-size: 16px;
   color: hsl(231, 11%, 63%);
 }
-main .bottom-navigation-btn-container .next-btn {
+.form-one-main-container .bottom-navigation-btn-container .next-btn {
   width: 100px;
   height: 40px;
   background-color: hsl(213, 96%, 18%);
@@ -57,12 +87,19 @@ main .bottom-navigation-btn-container .next-btn {
   border-radius: 5px;
   font-size: 16px;
 }
-main .bottom-navigation-btn-container .next-btn:hover {
+.form-one-main-container .bottom-navigation-btn-container .next-btn:hover {
   background-color: #174a89;
 }
-
-/* From One */
-.form-one-main-container {
+.form-one-main-container .bottom-navigation-btn-container .confirm-btn {
+  background-color: #4639ff;
+}
+.form-one-main-container .bottom-navigation-btn-container .confirm-btn:hover {
+  background-color: #938cff;
+}
+.form-one-main-container .bottom-navigation-btn-container {
+  justify-content: end;
+}
+.form-one-main-container .form-one-container {
   position: absolute;
   top: 95px;
   margin: 0 calc((100vw - 345px) / 2);
@@ -72,25 +109,37 @@ main .bottom-navigation-btn-container .next-btn:hover {
   padding: 35px 22px;
   height: 380px;
 }
-.form-one-main-container .form-header {
+.form-one-main-container .form-one-container .form-header {
   margin-bottom: 10px;
 }
-.form-one-main-container .form-description {
+.form-one-main-container .form-one-container .form-description {
   color: hsl(231, 11%, 63%);
   line-height: 1.5;
   margin-bottom: 24px;
   padding-right: 25px;
 }
-.form-one-main-container form {
-  display: flex;
+.form-one-main-container .form-one-container form {
+  display: grid;
   flex-direction: column;
 }
-.form-one-main-container form label {
+.form-one-main-container .form-one-container form .form-field {
+  display: grid;
+  grid-template-areas: "label error" "input input";
+}
+.form-one-main-container .form-one-container form .form-field label {
+  grid-area: label;
   font-size: 12px;
   font-weight: 400;
   margin-bottom: 5px;
 }
-.form-one-main-container form input {
+.form-one-main-container .form-one-container form .form-field .error-message {
+  grid-area: error;
+  color: hsl(354, 84%, 57%);
+  font-size: 12px;
+  justify-self: end;
+}
+.form-one-main-container .form-one-container form .form-field .input {
+  grid-area: input;
   width: 100%;
   height: 40px;
   border-radius: 5px;
@@ -99,16 +148,54 @@ main .bottom-navigation-btn-container .next-btn:hover {
   padding: 15px 15px;
   font-size: 16px;
 }
-.form-one-main-container form input::-moz-placeholder {
+.form-one-main-container .form-one-container form .form-field .input::-moz-placeholder {
   color: hsl(231, 11%, 63%);
   font-size: 16px;
 }
-.form-one-main-container form input::placeholder {
+.form-one-main-container .form-one-container form .form-field .input::placeholder {
   color: hsl(231, 11%, 63%);
   font-size: 16px;
+}
+.form-one-main-container .form-one-container form .form-field .error {
+  border-color: hsl(354, 84%, 57%);
 }
 
-.form-two-main-container {
+.form-two-main-container .bottom-navigation-btn-container {
+  position: absolute;
+  bottom: 0;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  width: 100%;
+  height: 70px;
+}
+.form-two-main-container .bottom-navigation-btn-container .back-btn {
+  background-color: white;
+  border: unset;
+  font-size: 16px;
+  color: hsl(231, 11%, 63%);
+}
+.form-two-main-container .bottom-navigation-btn-container .next-btn {
+  width: 100px;
+  height: 40px;
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+  border: unset;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.form-two-main-container .bottom-navigation-btn-container .next-btn:hover {
+  background-color: #174a89;
+}
+.form-two-main-container .bottom-navigation-btn-container .confirm-btn {
+  background-color: #4639ff;
+}
+.form-two-main-container .bottom-navigation-btn-container .confirm-btn:hover {
+  background-color: #938cff;
+}
+.form-two-main-container .form-two-container {
   position: absolute;
   top: 95px;
   margin: 0 calc((100vw - 345px) / 2);
@@ -118,16 +205,16 @@ main .bottom-navigation-btn-container .next-btn:hover {
   padding: 35px 22px;
   height: 500px;
 }
-.form-two-main-container .form-header {
+.form-two-main-container .form-two-container .form-header {
   margin-bottom: 10px;
 }
-.form-two-main-container .form-description {
+.form-two-main-container .form-two-container .form-description {
   color: hsl(231, 11%, 63%);
   line-height: 1.5;
   margin-bottom: 24px;
   padding-right: 25px;
 }
-.form-two-main-container .plans {
+.form-two-main-container .form-two-container .plans {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -139,14 +226,14 @@ main .bottom-navigation-btn-container .next-btn:hover {
   border: 1px solid hsl(231, 11%, 63%);
   border-radius: 10px;
 }
-.form-two-main-container .plans .header {
+.form-two-main-container .form-two-container .plans .header {
   font-weight: 800;
   padding-bottom: 3px;
 }
-.form-two-main-container .plans .price {
+.form-two-main-container .form-two-container .plans .price {
   color: hsl(231, 11%, 63%);
 }
-.form-two-main-container .form-slide {
+.form-two-main-container .form-two-container .form-slide {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,18 +243,18 @@ main .bottom-navigation-btn-container .next-btn:hover {
   border-radius: 10px;
   background-color: #f8f9fe;
 }
-.form-two-main-container .form-slide .switch {
+.form-two-main-container .form-two-container .form-slide .switch {
   position: relative;
   display: inline-block;
   width: 40px;
   height: 20px;
 }
-.form-two-main-container .form-slide .switch input {
+.form-two-main-container .form-two-container .form-slide .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
-.form-two-main-container .form-slide .switch .slider {
+.form-two-main-container .form-two-container .form-slide .switch .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -178,7 +265,7 @@ main .bottom-navigation-btn-container .next-btn:hover {
   transition: 0.4s;
   border-radius: 34px;
 }
-.form-two-main-container .form-slide .switch .slider:before {
+.form-two-main-container .form-two-container .form-slide .switch .slider:before {
   position: absolute;
   content: "";
   height: 14px;
@@ -189,11 +276,46 @@ main .bottom-navigation-btn-container .next-btn:hover {
   transition: 0.4s;
   border-radius: 50%;
 }
-.form-two-main-container .form-slide .switch input:checked + .slider:before {
+.form-two-main-container .form-two-container .form-slide .switch input:checked + .slider:before {
   transform: translateX(16px);
 }
 
-.form-three-main-container {
+.form-three-main-container .bottom-navigation-btn-container {
+  position: absolute;
+  bottom: 0;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  width: 100%;
+  height: 70px;
+}
+.form-three-main-container .bottom-navigation-btn-container .back-btn {
+  background-color: white;
+  border: unset;
+  font-size: 16px;
+  color: hsl(231, 11%, 63%);
+}
+.form-three-main-container .bottom-navigation-btn-container .next-btn {
+  width: 100px;
+  height: 40px;
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+  border: unset;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.form-three-main-container .bottom-navigation-btn-container .next-btn:hover {
+  background-color: #174a89;
+}
+.form-three-main-container .bottom-navigation-btn-container .confirm-btn {
+  background-color: #4639ff;
+}
+.form-three-main-container .bottom-navigation-btn-container .confirm-btn:hover {
+  background-color: #938cff;
+}
+.form-three-main-container .form-three-container {
   position: absolute;
   top: 95px;
   margin: 0 calc((100vw - 345px) / 2);
@@ -202,16 +324,16 @@ main .bottom-navigation-btn-container .next-btn:hover {
   border-radius: 10px;
   padding: 35px 22px;
 }
-.form-three-main-container .form-header {
+.form-three-main-container .form-three-container .form-header {
   margin-bottom: 10px;
 }
-.form-three-main-container .form-description {
+.form-three-main-container .form-three-container .form-description {
   color: hsl(231, 11%, 63%);
   line-height: 1.5;
   margin-bottom: 24px;
   padding-right: 25px;
 }
-.form-three-main-container .add-on {
+.form-three-main-container .form-three-container .add-on {
   width: 295px;
   height: 60px;
   padding: 14px 14px 0 14px;
@@ -219,7 +341,7 @@ main .bottom-navigation-btn-container .next-btn:hover {
   border-radius: 10px;
   border: 1px solid hsl(231, 11%, 63%);
 }
-.form-three-main-container .add-on form {
+.form-three-main-container .form-three-container .add-on form {
   display: grid;
   grid-template-areas: "checkbox product price" "checkbox description price";
   grid-template-columns: 21px 170px 45px;
@@ -229,29 +351,64 @@ main .bottom-navigation-btn-container .next-btn:hover {
        column-gap: 15px;
   row-gap: 2px;
 }
-.form-three-main-container .add-on form .checkbox {
+.form-three-main-container .form-three-container .add-on form .checkbox {
   grid-area: checkbox;
   width: 21px;
   height: 21px;
   border-radius: 20px;
 }
-.form-three-main-container .add-on form .header {
+.form-three-main-container .form-three-container .add-on form .header {
   grid-area: product;
   font-weight: 800;
   font-size: 14px;
 }
-.form-three-main-container .add-on form .description {
+.form-three-main-container .form-three-container .add-on form .description {
   grid-area: description;
   font-size: 12px;
   color: hsl(231, 11%, 63%);
 }
-.form-three-main-container .add-on form .price {
+.form-three-main-container .form-three-container .add-on form .price {
   grid-area: price;
   color: #4639ff;
   font-size: 13px;
 }
 
-.form-four-main-container {
+.form-four-main-container .bottom-navigation-btn-container {
+  position: absolute;
+  bottom: 0;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  width: 100%;
+  height: 70px;
+}
+.form-four-main-container .bottom-navigation-btn-container .back-btn {
+  background-color: white;
+  border: unset;
+  font-size: 16px;
+  color: hsl(231, 11%, 63%);
+}
+.form-four-main-container .bottom-navigation-btn-container .next-btn {
+  width: 100px;
+  height: 40px;
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+  border: unset;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.form-four-main-container .bottom-navigation-btn-container .next-btn:hover {
+  background-color: #174a89;
+}
+.form-four-main-container .bottom-navigation-btn-container .confirm-btn {
+  background-color: #4639ff;
+}
+.form-four-main-container .bottom-navigation-btn-container .confirm-btn:hover {
+  background-color: #938cff;
+}
+.form-four-main-container .form-four-container {
   position: absolute;
   top: 95px;
   margin: 0 calc((100vw - 345px) / 2);
@@ -260,52 +417,55 @@ main .bottom-navigation-btn-container .next-btn:hover {
   border-radius: 10px;
   padding: 35px 22px;
 }
-.form-four-main-container .form-header {
+.form-four-main-container .form-four-container .form-header {
   margin-bottom: 10px;
 }
-.form-four-main-container .form-description {
+.form-four-main-container .form-four-container .form-description {
   color: hsl(231, 11%, 63%);
   line-height: 1.5;
   margin-bottom: 24px;
   padding-right: 25px;
 }
-.form-four-main-container .chosen-services {
+.form-four-main-container .form-four-container .chosen-services {
   background-color: #f8f9fe;
   border-radius: 10px;
   padding: 20px 15px;
 }
-.form-four-main-container .chosen-services .plan {
+.form-four-main-container .form-four-container .chosen-services .plan {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.form-four-main-container .chosen-services .plan .plan-details {
+.form-four-main-container .form-four-container .chosen-services .plan .plan-details {
   padding-bottom: 10px;
 }
-.form-four-main-container .chosen-services .plan .plan-details li {
+.form-four-main-container .form-four-container .chosen-services .plan .plan-details li {
   font-size: 16px;
   font-weight: 500;
 }
-.form-four-main-container .chosen-services .plan .plan-details a {
+.form-four-main-container .form-four-container .chosen-services .plan .plan-details a {
   text-decoration: underline;
   color: hsl(231, 11%, 63%);
   font-weight: 400;
 }
-.form-four-main-container .chosen-services .plan .plan-price {
+.form-four-main-container .form-four-container .chosen-services .plan .plan-details a:hover {
+  background-color: #4639ff;
+}
+.form-four-main-container .form-four-container .chosen-services .plan .plan-price {
   font-weight: 800;
 }
-.form-four-main-container .chosen-services .bonus {
+.form-four-main-container .form-four-container .chosen-services .bonus {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.form-four-main-container .chosen-services .bonus .add-on {
+.form-four-main-container .form-four-container .chosen-services .bonus .add-on {
   color: hsl(231, 11%, 63%);
   font-size: 15px;
   padding: 16px 0 3px 0;
 }
-.form-four-main-container .chosen-services .bonus .add-on-price {
+.form-four-main-container .form-four-container .chosen-services .bonus .add-on-price {
   color: black;
   padding: 16px 0 3px 0;
 }
