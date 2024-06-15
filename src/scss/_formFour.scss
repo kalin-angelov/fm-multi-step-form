@@ -1,0 +1,70 @@
+@mixin flexRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-four-main-container {
+    @include formsStyles ();
+    .chosen-services {
+        background-color: #f8f9fe;
+        border-radius: 10px;
+        padding: 20px 15px;
+
+        .plan {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .plan-details {
+                padding-bottom: 10px;
+                li {
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+
+                a {
+                    text-decoration: underline;
+                    color: $cool-gray;
+                    font-weight: 400;
+                } 
+            }
+
+            .plan-price {
+                font-weight: 800;
+            }
+        }
+        
+        .bonus {
+            @include flexRow();
+
+            .add-on {
+                color: $cool-gray;
+                font-size: 15px;
+                padding: 16px 0 3px 0;
+            }
+
+            .add-on-price {
+                color: black;
+                padding: 16px 0 3px 0;
+            }
+        }
+    }
+
+    .price-all {
+        padding: 28px 15px 0 15px;
+        @include flexRow();
+
+        p {
+            color: $cool-gray;
+            font-size: 15px;
+        }
+
+        .total-price {
+            color: $purple;
+            font-weight: 500;
+            font-size: 16px;
+        }
+    }
+}
