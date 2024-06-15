@@ -2,6 +2,8 @@ import { useNavigate, Routes, Route } from "react-router-dom";
 import FormOne from "../FormOne/FormOne";
 import FormTwo from "../FormTwo/FormTwo";
 import FormThree from "../FormThree/FormThree";
+import Message from "../Message/Message";
+import FormFour from "../FormFour/FormFour";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -22,6 +24,8 @@ const Main = () => {
           <Route path="/" element={<FormOne />} />
           <Route path="/secondForm" element={<FormTwo />} />
           <Route path="/thirdForm" element={<FormThree />} />
+          <Route path="/fourthForm" element={<FormFour />} />
+          <Route path="/compleat" element={<Message />} />
         </Routes>
       </div>
 

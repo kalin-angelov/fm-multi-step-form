@@ -249,4 +249,116 @@ main .bottom-navigation-btn-container .next-btn:hover {
   grid-area: price;
   color: #4639ff;
   font-size: 13px;
+}
+
+.form-four-main-container {
+  position: absolute;
+  top: 95px;
+  margin: 0 calc((100vw - 345px) / 2);
+  width: 345px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  padding: 35px 22px;
+}
+.form-four-main-container .form-header {
+  margin-bottom: 10px;
+}
+.form-four-main-container .form-description {
+  color: hsl(231, 11%, 63%);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  padding-right: 25px;
+}
+.form-four-main-container .chosen-services {
+  background-color: #f8f9fe;
+  border-radius: 10px;
+  padding: 20px 15px;
+}
+.form-four-main-container .chosen-services .plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-four-main-container .chosen-services .plan .plan-details {
+  padding-bottom: 10px;
+}
+.form-four-main-container .chosen-services .plan .plan-details li {
+  font-size: 16px;
+  font-weight: 500;
+}
+.form-four-main-container .chosen-services .plan .plan-details a {
+  text-decoration: underline;
+  color: hsl(231, 11%, 63%);
+  font-weight: 400;
+}
+.form-four-main-container .chosen-services .plan .plan-price {
+  font-weight: 800;
+}
+.form-four-main-container .chosen-services .bonus {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-four-main-container .chosen-services .bonus .add-on {
+  color: hsl(231, 11%, 63%);
+  font-size: 15px;
+  padding: 16px 0 3px 0;
+}
+.form-four-main-container .chosen-services .bonus .add-on-price {
+  color: black;
+  padding: 16px 0 3px 0;
+}
+.form-four-main-container .price-all {
+  padding: 28px 15px 0 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-four-main-container .price-all p {
+  color: hsl(231, 11%, 63%);
+  font-size: 15px;
+}
+.form-four-main-container .price-all .total-price {
+  color: #4639ff;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.message-main-container {
+  position: absolute;
+  top: 95px;
+  margin: 0 calc((100vw - 345px) / 2);
+  width: 345px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  padding: 35px 22px;
+  text-align: center;
+  height: 400px;
+}
+.message-main-container .form-header {
+  margin-bottom: 10px;
+}
+.message-main-container .form-description {
+  color: hsl(231, 11%, 63%);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  padding-right: 25px;
+}
+.message-main-container figure {
+  margin-top: 42px;
+  text-align: center;
+}
+.message-main-container figure img {
+  width: 56px;
+  height: 56px;
+}
+.message-main-container h1 {
+  margin-top: 25px;
+  margin-bottom: 18px;
+}
+.message-main-container p {
+  color: hsl(231, 11%, 63%);
+  line-height: 1.5;
 }/*# sourceMappingURL=styles.css.map */
