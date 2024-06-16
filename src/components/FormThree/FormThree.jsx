@@ -1,47 +1,60 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+import { addOnManager } from "../../utils/addOnManager";
+import { useForm } from "../../hooks/useForm";
 
 const FormThree = () => {
     const navigate = useNavigate();
+    const userPlan = sessionStorage.getItem("userPlan");
+    const userAddOns = sessionStorage.getItem("userAddOns");
+    const [plan, setPlan] = useState(JSON.parse(userPlan).type === "Monthly" ? true : false);
 
-    const nextStep = () => {
+    const { formValue, onFormValueChange} = useForm({
+        service: userAddOns ? JSON.parse(userAddOns).service.checked : false,
+        storage: userAddOns ? JSON.parse(userAddOns).storage.checked : false,
+        customize: userAddOns ? JSON.parse(userAddOns).customize.checked : false,
+    });
+
+    const nextStep = (body) => {
+        addOnManager(body, plan);
         navigate("/four")
     };
+
     return (
         <div className="form-three-main-container">
             <article className="form-three-container">
                 <h1 className="form-header">Pick add-ons</h1>
                 <p className="form-description">Add-ons help enhance your gaming experience</p>
-                <div className="add-on">
-                    <form>
-                        <input type="checkbox" id="service" name="service" className="checkbox" />
-                        <label htmlFor="service" className="header">Online Service</label>
+
+                <form>
+                    <label htmlFor="service" className={formValue.service ? "add-on active" : "add-on"} name="service" >
+                        <input type="checkbox" id="service" name="service" className="checkbox" checked={formValue.service} onChange={onFormValueChange} />
+                        <p className="header">Online Service</p>
                         <p className="description">Access to multiplayer games</p>
-                        <p className="price">+$10/yr</p>
-                    </form>
-                    
-                </div>
-                <div className="add-on">
-                    <form>
-                        <input type="checkbox" id="storage" name="storage" className="checkbox" />
-                        <label htmlFor="storage" className="header" >Larger storage</label>
+                        <p className="price">{plan ? "+$1/mo" : "+$10/yr"}</p> 
+                    </label>
+
+                    <label htmlFor="storage" className={formValue.storage ? "add-on active" : "add-on"} name="storage" >
+                        <input type="checkbox" id="storage" name="storage" className="checkbox" checked={formValue.storage} onChange={onFormValueChange}/>
+                        <p className="header" >Larger storage</p>
                         <p className="description">Extra 1TB of cloud save</p>
-                        <p className="price">+$20/yr</p>
-                    </form>
+                        <p className="price">{plan ? "+$2/mo" : "+$20/yr"}</p>
+                    </label >
                     
-                </div>
-                <div className="add-on">
-                    <form>
-                        <input type="checkbox" id="customize" name="customize" className="checkbox" />
-                        <label htmlFor="customize" className="header">Customizable profile</label>
+                    <label htmlFor="customize" className={formValue.customize ? "add-on active" : "add-on"} name="customize" >
+                        <input type="checkbox" id="customize" name="customize" className="checkbox" checked={formValue.customize} onChange={onFormValueChange}/>
+                        <p className="header">Customizable profile</p>
                         <p className="description">Custom theme on your profile</p>
-                        <p className="price">+$20/yr</p>
-                    </form>
-                </div>
+                        <p className="price">{plan ? "+$2/mo" : "+$20/yr"}</p> 
+                    </label >
+                </form>
+                
             </article>
 
             <div className="bottom-navigation-btn-container">
                 <button className="back-btn" onClick={() => navigate(-1)}>Go Back</button>
-                <button className="next-btn" onClick={nextStep}>Next Step</button>
+                <button className="next-btn" onClick={() => nextStep(formValue)}>Next Step</button>
             </div>
         </div>
     );

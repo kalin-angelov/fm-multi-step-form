@@ -204,6 +204,7 @@ aside .navigation .on {
   border-radius: 10px;
   padding: 35px 22px;
   height: 500px;
+  transition: 0.4s;
 }
 .form-two-main-container .form-two-container .form-header {
   margin-bottom: 10px;
@@ -214,24 +215,42 @@ aside .navigation .on {
   margin-bottom: 24px;
   padding-right: 25px;
 }
+.form-two-main-container .form-two-container input {
+  display: none;
+}
 .form-two-main-container .form-two-container .plans {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 12px;
+  cursor: pointer;
   padding: 0 14px;
   margin: 12px 0;
   width: 295px;
   height: 80px;
   border: 1px solid hsl(231, 11%, 63%);
   border-radius: 10px;
+  transition: 0.4s;
+}
+.form-two-main-container .form-two-container .plans:hover {
+  border: 2px solid #4639ff;
+}
+.form-two-main-container .form-two-container .plans .header, .form-two-main-container .form-two-container .plans .price, .form-two-main-container .form-two-container .plans .bonus-months {
+  padding: 3px 0;
 }
 .form-two-main-container .form-two-container .plans .header {
   font-weight: 800;
-  padding-bottom: 3px;
 }
 .form-two-main-container .form-two-container .plans .price {
   color: hsl(231, 11%, 63%);
+}
+.form-two-main-container .form-two-container .yearly {
+  height: 100px;
+  transition: 0.4s;
+}
+.form-two-main-container .form-two-container .selected {
+  border: 1px solid #4639ff;
+  background-color: #f8f9fe;
 }
 .form-two-main-container .form-two-container .form-slide {
   display: flex;
@@ -242,6 +261,7 @@ aside .navigation .on {
   height: 50px;
   border-radius: 10px;
   background-color: #f8f9fe;
+  transition: 0.4s;
 }
 .form-two-main-container .form-two-container .form-slide .switch {
   position: relative;
@@ -271,13 +291,17 @@ aside .navigation .on {
   height: 14px;
   width: 14px;
   left: 4px;
-  bottom: 3.5px;
+  bottom: 3px;
   background-color: white;
   transition: 0.4s;
   border-radius: 50%;
 }
 .form-two-main-container .form-two-container .form-slide .switch input:checked + .slider:before {
   transform: translateX(16px);
+}
+.form-two-main-container .extend {
+  height: 570px;
+  transition: 0.4s;
 }
 
 .form-three-main-container .bottom-navigation-btn-container {
@@ -336,41 +360,42 @@ aside .navigation .on {
 .form-three-main-container .form-three-container .add-on {
   width: 295px;
   height: 60px;
-  padding: 14px 14px 0 14px;
+  padding: 15px;
   margin: 12px 0;
   border-radius: 10px;
   border: 1px solid hsl(231, 11%, 63%);
-}
-.form-three-main-container .form-three-container .add-on form {
   display: grid;
   grid-template-areas: "checkbox product price" "checkbox description price";
   grid-template-columns: 21px 170px 45px;
   align-items: center;
-  justify-content: centers;
   -moz-column-gap: 15px;
        column-gap: 15px;
   row-gap: 2px;
 }
-.form-three-main-container .form-three-container .add-on form .checkbox {
+.form-three-main-container .form-three-container .add-on .checkbox {
   grid-area: checkbox;
   width: 21px;
   height: 21px;
   border-radius: 20px;
 }
-.form-three-main-container .form-three-container .add-on form .header {
+.form-three-main-container .form-three-container .add-on .header {
   grid-area: product;
   font-weight: 800;
   font-size: 14px;
 }
-.form-three-main-container .form-three-container .add-on form .description {
+.form-three-main-container .form-three-container .add-on .description {
   grid-area: description;
   font-size: 12px;
   color: hsl(231, 11%, 63%);
 }
-.form-three-main-container .form-three-container .add-on form .price {
+.form-three-main-container .form-three-container .add-on .price {
   grid-area: price;
   color: #4639ff;
   font-size: 13px;
+}
+.form-three-main-container .form-three-container .active {
+  border: 1px solid #4639ff;
+  background-color: #f8f9fe;
 }
 
 .form-four-main-container .bottom-navigation-btn-container {
@@ -449,7 +474,7 @@ aside .navigation .on {
   font-weight: 400;
 }
 .form-four-main-container .form-four-container .chosen-services .plan .plan-details a:hover {
-  background-color: #4639ff;
+  color: #4639ff;
 }
 .form-four-main-container .form-four-container .chosen-services .plan .plan-price {
   font-weight: 800;
