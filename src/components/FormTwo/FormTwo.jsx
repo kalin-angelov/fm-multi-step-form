@@ -48,7 +48,7 @@ const FormTwo = () => {
                 <div className="add-ons-container">
                     <div id="arcade" className={toggleBtn ? "plans" : "plans yearly"} onClick={(e) => chosenPlans(e)} style={selected === "Arcade" ? {border: "1px solid #4639ff", backgroundColor: "#f8f9fe"} : null}>
                         <figure>
-                            <img id="arcade-img" src="/public/images/icon-arcade.svg" alt="puzzle piece" />
+                            <img id="arcade-img" src="/images/icon-arcade.svg" alt="puzzle piece" />
                         </figure>
                         <ul>
                             <li id="arcade-header" className="header">Arcade</li>
@@ -59,7 +59,7 @@ const FormTwo = () => {
 
                     <div id="advanced" className={toggleBtn ? "plans" : "plans yearly"} onClick={(e) => chosenPlans(e)} style={selected === "Advanced" ? {border: "1px solid #4639ff", backgroundColor: "#f8f9fe"} : null}>
                         <figure>
-                            <img id="advanced-img" src="/public/images/icon-advanced.svg" alt="game controller" />
+                            <img id="advanced-img" src="/images/icon-advanced.svg" alt="game controller" />
                         </figure>
                         <ul>
                             <li id="advanced-header" className="header">Advance</li>
@@ -70,7 +70,7 @@ const FormTwo = () => {
 
                     <div id="pro" className={toggleBtn ? "plans" : "plans yearly"} onClick={(e) => chosenPlans(e)} style={selected === "Pro" ? {border: "1px solid #4639ff", backgroundColor: "#f8f9fe"} : null}>
                         <figure>
-                            <img id="pro-img" src="/public/images/icon-pro.svg" alt="big game controller" />
+                            <img id="pro-img" src="/images/icon-pro.svg" alt="big game controller" />
                         </figure>
                         <ul>
                             <li id="pro-header" className="header">Pro</li>
