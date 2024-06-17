@@ -76,3 +76,46 @@
         }
     }
 }
+
+@media screen and (min-width: 1440px) {
+    .form-four-main-container {
+        .form-four-container {
+            width: 100%;
+            .chosen-services {
+                width: 445px;
+                padding: 20px 15px;
+                margin-top: 40px;
+                .plan {
+                    margin-bottom: 25px;
+                    .plan-details {
+                        padding-bottom: 10px;
+                        li {
+                            font-size: 18px;
+                        }
+        
+                        a {
+                          font-size: 16px;
+                        }
+                    }
+
+                    .plan-price {
+                        font-size: 18px;
+                    }
+                }
+                
+                .bonus {
+                    .add-on, .add-on-price {
+                        font-size: 16px;
+                        padding: 20px 0 3px 0;
+                    }
+                }
+            }
+        }
+    
+        .price-all {
+            .total-price {
+                font-size: 18px;
+            }
+        }
+    }
+}

@@ -25,7 +25,7 @@ const FormThree = () => {
         <div className="form-three-main-container">
             <article className="form-three-container">
                 <h1 className="form-header">Pick add-ons</h1>
-                <p className="form-description">Add-ons help enhance your gaming experience</p>
+                <p className="form-description">Add-ons help enhance your gaming experience.</p>
 
                 <form>
                     <label htmlFor="service" className={formValue.service ? "add-on active" : "add-on"} name="service" >

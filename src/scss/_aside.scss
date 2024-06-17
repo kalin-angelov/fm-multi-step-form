@@ -12,8 +12,8 @@ aside {
         justify-content: center;
         align-items: center;
         gap: 15px;
-
         padding-top: 30px;
+
         .steps {
             color: $white;
             border: 1.5px solid $white;
@@ -22,7 +22,6 @@ aside {
             height: 35px;
             padding: 7px 10px 0 10px;
             text-align: center;
-            cursor: pointer;
         }
 
         .on {
@@ -36,29 +35,42 @@ aside {
 
 @media screen and (min-width: 1440px) {
     aside {
-        .top-navigation-container {
-            grid-area: aside;
-            background-image: url("/public/images/bg-sidebar-desktop.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            width: 100%;
+        background-image: url("/public/images/bg-sidebar-desktop.svg");
+        width: 275px;
+        height: 565px;
     
-            .top-navigation {
-                flex-direction: column;
-                gap: 28px;
-    
-                padding-top: 30px;
-                li {
-                    color: $white;
-                    border: 1.5px solid $white;
-                    border-radius: 50%;
+        .navigation {
+            flex-direction: column;
+            gap: 30px;
+            padding-top: 40px;
+
+            .step-container {
+                display:  flex;
+                justify-content: start;
+                align-items: center;
+                gap: 15px;
+
+                width: 160px;
+                .steps {
                     width: 35px;
                     height: 35px;
-                    padding: 7px 10px 0 10px;
-                    text-align: center;
-                    cursor: pointer;
+                }
+
+                .step-info {
+                    li {
+                        text-transform: uppercase;
+                        font-weight: 100;
+                        font-size: 12px;
+                        color: $white;
+                        span {
+                            font-weight: 800;
+                            font-size: 16px;
+                        }
+                    }
                 }
             }
+
+           
         }
     }
 }

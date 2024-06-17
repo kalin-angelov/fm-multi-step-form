@@ -114,3 +114,57 @@
         transition: .4s;
     }
 }
+
+@media screen and (min-width: 1440px) {
+    .form-two-main-container {
+        .form-two-container {
+            padding: 50px 85px 70px 90px;
+            .add-ons-container {
+                display: flex;
+                gap: 20px;
+            }
+
+            .plans {
+                flex-direction: column;
+                align-items: start;
+                gap: 35px;
+
+                padding: 20px 14px;
+                width: 140px;
+                height: 164px;
+    
+                figure {
+                    width: 42px;
+                    height: 42px;
+                    img {
+                        width: inherit;
+                        height: inherit;
+                    }
+                }
+            }
+    
+            .yearly {
+                height: 186px;
+            }
+    
+            .selected {
+                border: 1px solid $purple;
+                background-color: #f8f9fe;
+            }
+        
+            .form-slide {
+                width: 100%;
+                margin-top: 20px;
+
+                p {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+        }
+        
+        .extend {
+            height: 500px;
+        }
+    }
+}
