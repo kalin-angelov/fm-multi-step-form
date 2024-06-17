@@ -35,7 +35,7 @@ $white: hsl(0, 0%, 100%);
         padding-right: 25px;
     } 
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1024px) {
         position: unset;
         grid-area: form;
         margin: 0;
@@ -95,7 +95,7 @@ $white: hsl(0, 0%, 100%);
         }
     }
 
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1024px) {
         .bottom-navigation-btn-container {
             position: unset;
             padding: 0 85px 17px 90px;

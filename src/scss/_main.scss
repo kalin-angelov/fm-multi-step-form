@@ -2,7 +2,7 @@ main {
     min-height: 100dvh;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
     main {
         min-height: unset;
         width: 940px;

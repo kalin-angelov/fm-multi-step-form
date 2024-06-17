@@ -4,7 +4,7 @@ main {
   min-height: 100dvh;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   main {
     min-height: unset;
     width: 940px;
@@ -47,7 +47,7 @@ aside .navigation .on {
   color: black;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   aside {
     background-image: url("/public/images/bg-sidebar-desktop.svg");
     width: 275px;
@@ -116,7 +116,7 @@ aside .navigation .on {
 .form-one-main-container .bottom-navigation-btn-container .confirm-btn:hover {
   background-color: #938cff;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-one-main-container .bottom-navigation-btn-container {
     position: unset;
     padding: 0 85px 17px 90px;
@@ -152,7 +152,7 @@ aside .navigation .on {
   margin-bottom: 24px;
   padding-right: 25px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-one-main-container .form-one-container {
     position: unset;
     grid-area: form;
@@ -211,7 +211,7 @@ aside .navigation .on {
   border-color: hsl(354, 84%, 57%);
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-one-main-container .form-one-container form .form-field label {
     font-size: 16px;
   }
@@ -266,7 +266,7 @@ aside .navigation .on {
 .form-two-main-container .bottom-navigation-btn-container .confirm-btn:hover {
   background-color: #938cff;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-two-main-container .bottom-navigation-btn-container {
     position: unset;
     padding: 0 85px 17px 90px;
@@ -300,7 +300,7 @@ aside .navigation .on {
   margin-bottom: 24px;
   padding-right: 25px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-two-main-container .form-two-container {
     position: unset;
     grid-area: form;
@@ -406,7 +406,7 @@ aside .navigation .on {
   transition: 0.4s;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-two-main-container .form-two-container {
     padding: 50px 85px 70px 90px;
   }
@@ -484,7 +484,7 @@ aside .navigation .on {
 .form-three-main-container .bottom-navigation-btn-container .confirm-btn:hover {
   background-color: #938cff;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-three-main-container .bottom-navigation-btn-container {
     position: unset;
     padding: 0 85px 17px 90px;
@@ -516,7 +516,7 @@ aside .navigation .on {
   margin-bottom: 24px;
   padding-right: 25px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-three-main-container .form-three-container {
     position: unset;
     grid-area: form;
@@ -574,7 +574,7 @@ aside .navigation .on {
   background-color: #f8f9fe;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-three-main-container .form-three-container .add-on {
     width: 450px;
     height: 85px;
@@ -636,7 +636,7 @@ aside .navigation .on {
 .form-four-main-container .bottom-navigation-btn-container .confirm-btn:hover {
   background-color: #938cff;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-four-main-container .bottom-navigation-btn-container {
     position: unset;
     padding: 0 85px 17px 90px;
@@ -668,7 +668,7 @@ aside .navigation .on {
   margin-bottom: 24px;
   padding-right: 25px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-four-main-container .form-four-container {
     position: unset;
     grid-area: form;
@@ -745,7 +745,7 @@ aside .navigation .on {
   font-size: 16px;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .form-four-main-container .form-four-container {
     width: 100%;
   }
@@ -797,7 +797,7 @@ aside .navigation .on {
   margin-bottom: 24px;
   padding-right: 25px;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .message-main-container {
     position: unset;
     grid-area: form;
@@ -831,7 +831,7 @@ aside .navigation .on {
   line-height: 1.5;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .message-main-container {
     width: 635px;
     padding: 0;
